@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>판례·조문·일정 | 리담 변리사 2차 아카데미</title>
+  <title>판례·조문 · 일정 | KR 변리사 2차 아카데미</title>
   <meta name="description" content="변리사 2차 대비 주요 판례·조문 정리, 모의고사 일정, 스터디 모집 예시." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,13 +13,34 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand">리담 변리사 <span class="badge">2차</span></a>
+      <a href="index.html" class="brand">KR 변리사 <span class="badge">2차</span></a>
       <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
       <ul class="nav-links">
         <li><a href="index.html" data-nav="home">홈</a></li>
-        <li><a href="subjects/patent.html" data-nav="subjects">과목별 강의</a></li>
-        <li><a href="problems.html" data-nav="problems">사례·논술 문제</a></li>
-        <li><a href="resources.html" data-nav="resources">판례·일정</a></li>
+        <li class="has-dropdown">
+          <a href="subjects/patent.html" class="nav-top" data-nav="subjects">과목별 강의 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="subjects/patent.html">특허법</a></li>
+            <li><a href="subjects/trademark.html">상표법</a></li>
+            <li><a href="subjects/civil-procedure.html">민사소송법</a></li>
+            <li><a href="subjects/elective.html">선택과목(저작권법)</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="problems.html" class="nav-top" data-nav="problems">사례·논술 문제 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="problems.html#q-patent">특허법 사례형</a></li>
+            <li><a href="problems.html#q-trademark">상표법 논술형</a></li>
+            <li><a href="problems.html#upload">문제·답안 업로드</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="resources.html" class="nav-top" data-nav="resources">판례·일정 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="resources.html#cases">판례·조문</a></li>
+            <li><a href="resources.html#schedule">일정</a></li>
+          </ul>
+        </li>
         <li><a href="submit.html" class="nav-cta" data-nav="submit">답안 첨삭 신청</a></li>
       </ul>
     </div>
@@ -27,17 +48,21 @@
 
   <section class="page-header">
     <div class="container">
-      <div class="breadcrumb"><a href="index.html">홈</a> › 판례·조문·일정</div>
-      <h1>판례·조문 정리 · 모의고사 · 스터디</h1>
-      <p>2차 답안에 바로 쓰는 판례·조문, 모의고사 일정, 스터디 모집을 한곳에서 관리합니다.</p>
+      <div class="breadcrumb"><a href="index.html">홈</a> › 판례·일정</div>
+      <h1>판례·조문 &amp; 일정</h1>
+      <p>판례·조문 정리와 일정(모의고사·스터디)을 아래에서 <strong>구분된 섹션</strong>으로 확인하세요.</p>
+      <ul class="dropdown-menu" style="position:static; display:flex; flex-direction:row; flex-wrap:wrap; margin-top:14px; box-shadow:none;">
+        <li><a href="#cases">① 판례·조문</a></li>
+        <li><a href="#schedule">② 일정(모의고사·스터디)</a></li>
+      </ul>
     </div>
   </section>
 
-  <!-- 주요 판례/조문 -->
-  <section class="section">
+  <!-- ===== 섹션 1: 판례·조문 ===== -->
+  <section class="section" id="cases">
     <div class="container">
-      <div class="example-flag">ℹ️ 아래 판례·조문·일정은 구조 설명용 <strong>예시</strong>이며 실제 정보가 아닙니다.</div>
-      <h2>주요 판례·조문 정리 <span class="pill-example">예시</span></h2>
+      <div class="example-flag">ℹ️ 아래 판례·조문은 구조 설명용 <strong>예시</strong>이며 실제 정보가 아닙니다.</div>
+      <h2>① 판례·조문 정리 <span class="pill-example">예시</span></h2>
       <table class="simple-table">
         <thead>
           <tr><th>과목</th><th>쟁점</th><th>핵심 조문·법리</th></tr>
@@ -52,10 +77,13 @@
     </div>
   </section>
 
-  <!-- 모의고사 일정 -->
-  <section class="section alt">
+  <!-- ===== 섹션 2: 일정(모의고사 · 스터디) ===== -->
+  <section class="section alt" id="schedule">
     <div class="container">
-      <h2>모의고사 일정 <span class="pill-example">예시</span></h2>
+      <h2>② 일정 <span class="pill-example">예시</span></h2>
+      <p style="color:var(--color-ink-soft); margin-top:-4px;">모의고사 일정과 스터디 모집 일정을 한 섹션에서 안내합니다.</p>
+
+      <h3 style="margin-top:28px;">모의고사 일정</h3>
       <table class="simple-table">
         <thead>
           <tr><th>회차</th><th>일자(예시)</th><th>과목</th><th>형태</th></tr>
@@ -66,13 +94,8 @@
           <tr><td>3회차</td><td>5월 셋째 주 토요일</td><td>전과목 통합</td><td>실전 모의 1일</td></tr>
         </tbody>
       </table>
-    </div>
-  </section>
 
-  <!-- 스터디 모집 -->
-  <section class="section">
-    <div class="container">
-      <h2>스터디 모집 <span class="pill-example">예시</span></h2>
+      <h3 style="margin-top:36px;">스터디 모집</h3>
       <div class="grid">
         <div class="card">
           <span class="subject-tag">답안 교환</span>

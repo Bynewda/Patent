@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>답안 작성·첨삭 신청 | 리담 변리사 2차 아카데미</title>
+  <title>답안 작성·첨삭 신청 | KR 변리사 2차 아카데미</title>
   <meta name="description" content="변리사 2차 답안을 작성하고 첨삭을 신청하는 흐름 예시 (클라이언트 전용 데모)." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,13 +13,34 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand">리담 변리사 <span class="badge">2차</span></a>
+      <a href="index.html" class="brand">KR 변리사 <span class="badge">2차</span></a>
       <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
       <ul class="nav-links">
         <li><a href="index.html" data-nav="home">홈</a></li>
-        <li><a href="subjects/patent.html" data-nav="subjects">과목별 강의</a></li>
-        <li><a href="problems.html" data-nav="problems">사례·논술 문제</a></li>
-        <li><a href="resources.html" data-nav="resources">판례·일정</a></li>
+        <li class="has-dropdown">
+          <a href="subjects/patent.html" class="nav-top" data-nav="subjects">과목별 강의 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="subjects/patent.html">특허법</a></li>
+            <li><a href="subjects/trademark.html">상표법</a></li>
+            <li><a href="subjects/civil-procedure.html">민사소송법</a></li>
+            <li><a href="subjects/elective.html">선택과목(저작권법)</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="problems.html" class="nav-top" data-nav="problems">사례·논술 문제 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="problems.html#q-patent">특허법 사례형</a></li>
+            <li><a href="problems.html#q-trademark">상표법 논술형</a></li>
+            <li><a href="problems.html#upload">문제·답안 업로드</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="resources.html" class="nav-top" data-nav="resources">판례·일정 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="resources.html#cases">판례·조문</a></li>
+            <li><a href="resources.html#schedule">일정</a></li>
+          </ul>
+        </li>
         <li><a href="submit.html" class="nav-cta" data-nav="submit">답안 첨삭 신청</a></li>
       </ul>
     </div>
@@ -51,7 +72,7 @@
             <option value="특허법">특허법 (필수)</option>
             <option value="상표법">상표법 (필수)</option>
             <option value="민사소송법">민사소송법 (필수)</option>
-            <option value="선택과목">선택과목</option>
+            <option value="저작권법(선택)">저작권법 (선택)</option>
           </select>
         </div>
 

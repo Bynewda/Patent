@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>사례·논술 문제 | 리담 변리사 2차 아카데미</title>
+  <title>사례·논술 문제 | KR 변리사 2차 아카데미</title>
   <meta name="description" content="변리사 2차 사례형·논술형 문제 뷰어 예시 - 쟁점 목록과 모범답안 토글." />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,13 +13,34 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a href="index.html" class="brand">리담 변리사 <span class="badge">2차</span></a>
+      <a href="index.html" class="brand">KR 변리사 <span class="badge">2차</span></a>
       <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
       <ul class="nav-links">
         <li><a href="index.html" data-nav="home">홈</a></li>
-        <li><a href="subjects/patent.html" data-nav="subjects">과목별 강의</a></li>
-        <li><a href="problems.html" data-nav="problems">사례·논술 문제</a></li>
-        <li><a href="resources.html" data-nav="resources">판례·일정</a></li>
+        <li class="has-dropdown">
+          <a href="subjects/patent.html" class="nav-top" data-nav="subjects">과목별 강의 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="subjects/patent.html">특허법</a></li>
+            <li><a href="subjects/trademark.html">상표법</a></li>
+            <li><a href="subjects/civil-procedure.html">민사소송법</a></li>
+            <li><a href="subjects/elective.html">선택과목(저작권법)</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="problems.html" class="nav-top" data-nav="problems">사례·논술 문제 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="problems.html#q-patent">특허법 사례형</a></li>
+            <li><a href="problems.html#q-trademark">상표법 논술형</a></li>
+            <li><a href="problems.html#upload">문제·답안 업로드</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="resources.html" class="nav-top" data-nav="resources">판례·일정 <span class="caret" aria-hidden="true">▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="resources.html#cases">판례·조문</a></li>
+            <li><a href="resources.html#schedule">일정</a></li>
+          </ul>
+        </li>
         <li><a href="submit.html" class="nav-cta" data-nav="submit">답안 첨삭 신청</a></li>
       </ul>
     </div>
@@ -38,7 +59,7 @@
       <div class="example-flag">ℹ️ 아래 문제·모범답안은 학습 방법을 보여주기 위한 <strong>예시(가상)</strong>이며 실제 기출이 아닙니다.</div>
 
       <!-- 문제 1: 특허법 사례형 -->
-      <article class="qa-card">
+      <article class="qa-card" id="q-patent">
         <div class="q-head">
           <span class="type-tag">사례형</span>
           <span class="subject-tag">특허법</span>
@@ -93,7 +114,7 @@
       </article>
 
       <!-- 문제 2: 상표법 논술형 -->
-      <article class="qa-card">
+      <article class="qa-card" id="q-trademark">
         <div class="q-head">
           <span class="type-tag">논술형</span>
           <span class="subject-tag">상표법</span>
@@ -140,6 +161,67 @@
         </div>
       </article>
 
+      <!-- 사용자가 업로드한 문제가 표시되는 영역 -->
+      <div id="user-uploads"></div>
+
+      <!-- 문제·답안 직접 업로드(로컬 데모) -->
+      <article class="upload-card" id="upload">
+        <h2>내 문제·답안 업로드 <span class="pill-example">로컬 데모</span></h2>
+        <div class="example-flag">
+          ℹ️ 이 업로드는 서버 없이 <strong>브라우저 안에서만</strong> 동작하는 예시입니다. 입력한 문제와 답안은 아래 목록에 새 카드로 추가되며,
+          같은 브라우저에서는 새로고침해도 유지됩니다(localStorage). 서버로 전송되지 않습니다.
+        </div>
+
+        <form id="upload-form" class="form-grid" novalidate>
+          <div class="field">
+            <label for="up-title">문제 제목</label>
+            <input type="text" id="up-title" name="title" placeholder="예) 제3문 - 선사용권의 요건" required />
+          </div>
+
+          <div class="field">
+            <label for="up-subject">과목</label>
+            <select id="up-subject" name="subject" required>
+              <option value="특허법">특허법</option>
+              <option value="상표법">상표법</option>
+              <option value="민사소송법">민사소송법</option>
+              <option value="저작권법(선택)">저작권법(선택)</option>
+              <option value="기타">기타</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="up-type">유형</label>
+            <select id="up-type" name="type" required>
+              <option value="사례형">사례형</option>
+              <option value="논술형">논술형</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="up-body">문제 내용</label>
+            <textarea id="up-body" name="body" placeholder="문제 지문을 입력하세요." required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="up-answer">내 답안</label>
+            <textarea id="up-answer" name="answer" placeholder="Ⅰ. 논점의 정리 …&#10;Ⅱ. …&#10;Ⅲ. 결론"></textarea>
+            <p class="hint">텍스트 파일(.txt)을 선택하면 답안 칸을 자동으로 채울 수 있습니다.</p>
+          </div>
+
+          <div class="field">
+            <label for="up-file">답안 파일 선택 (선택, .txt 권장)</label>
+            <input type="file" id="up-file" name="file" accept=".txt,text/plain" />
+            <p class="file-name" id="up-file-name" hidden></p>
+          </div>
+
+          <div>
+            <button type="submit" class="btn btn-primary">문제·답안 추가하기</button>
+            <button type="button" class="btn btn-ghost" id="upload-clear">업로드한 문제 모두 지우기</button>
+            <p class="form-note">추가된 문제는 모범답안처럼 "내 답안 보기" 토글로 펼쳐볼 수 있습니다. (로컬 전용 데모)</p>
+          </div>
+        </form>
+      </article>
+
       <p style="text-align:center;">
         <a href="submit.html" class="btn btn-primary">내 답안 작성하고 첨삭 신청하기</a>
       </p>
@@ -153,5 +235,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/uploads.js"></script>
 </body>
 </html>
