@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>답안 작성·첨삭 신청 | 리담 변리사 2차 아카데미</title>
+  <meta name="description" content="변리사 2차 답안을 작성하고 첨삭을 신청하는 흐름 예시 (클라이언트 전용 데모)." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body data-page="submit">
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">리담 변리사 <span class="badge">2차</span></a>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html" data-nav="home">홈</a></li>
+        <li><a href="subjects/patent.html" data-nav="subjects">과목별 강의</a></li>
+        <li><a href="problems.html" data-nav="problems">사례·논술 문제</a></li>
+        <li><a href="resources.html" data-nav="resources">판례·일정</a></li>
+        <li><a href="submit.html" class="nav-cta" data-nav="submit">답안 첨삭 신청</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">홈</a> › 답안 첨삭 신청</div>
+      <h1>답안 작성 → 첨삭 신청</h1>
+      <p>직접 작성한 2차 답안을 제출하면 강사 첨삭 대기열에 등록되는 흐름입니다. (데모: 실제 전송 없음)</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="example-flag">
+        ℹ️ 이 폼은 백엔드 없이 동작하는 <strong>예시</strong>입니다. 제출해도 서버로 전송되지 않으며, 작성 내용은 브라우저 안에서만 처리되고 확인 메시지만 표시됩니다.
+      </div>
+
+      <form id="submit-form" class="form-grid" novalidate>
+        <div class="field">
+          <label for="name">이름 / 닉네임</label>
+          <input type="text" id="name" name="name" placeholder="예) 홍길동" required />
+        </div>
+
+        <div class="field">
+          <label for="subject">과목 선택</label>
+          <select id="subject" name="subject" required>
+            <option value="특허법">특허법 (필수)</option>
+            <option value="상표법">상표법 (필수)</option>
+            <option value="민사소송법">민사소송법 (필수)</option>
+            <option value="선택과목">선택과목</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="problem">대상 문제</label>
+          <input type="text" id="problem" name="problem" placeholder="예) 제1문 - 균등침해와 출원경과 금반언" />
+          <p class="hint">문제 뷰어에서 연습한 문제 제목을 적어 두면 첨삭 시 참고됩니다.</p>
+        </div>
+
+        <div class="field">
+          <label for="answer">답안 작성</label>
+          <textarea id="answer" name="answer" placeholder="Ⅰ. 논점의 정리 …&#10;Ⅱ. …&#10;Ⅲ. …&#10;Ⅳ. 결론" required></textarea>
+          <div class="counter" id="answer-counter">0자 작성</div>
+          <p class="hint">목차(서론-본론-결론) 구조로 작성하면 첨삭 포인트를 잡기 쉽습니다.</p>
+        </div>
+
+        <div class="field">
+          <label for="request">첨삭 요청사항 (선택)</label>
+          <input type="text" id="request" name="request" placeholder="예) 쟁점 누락 여부와 목차 구성을 중점적으로 봐주세요" />
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-primary">첨삭 신청하기</button>
+          <p class="form-note">제출 시 개인정보는 저장되지 않습니다. (데모)</p>
+        </div>
+      </form>
+
+      <div class="alert-success" id="submit-success" hidden role="status" aria-live="polite">
+        <strong>✅ 첨삭 신청이 접수되었습니다 (예시)</strong>
+        <span id="submit-detail"></span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclaimer">⚠️ 본 폼은 구조 시연용 <strong>예시</strong>로, 입력값을 서버로 전송하거나 저장하지 않습니다.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/submit.js"></script>
+</body>
+</html>
